@@ -344,5 +344,5 @@ values  (1, 20),
         (38, 18),
         (39, 19),
         (40, 20);
-```
+``` 
 # [Back SQL_practis](https://github.com/Pavlik1100/SQL_practis)
