@@ -1,9 +1,9 @@
 SQL_DDL
-Первая часть.
+РџРµСЂРІР°СЏ С‡Р°СЃС‚СЊ.
 
-Таблица employees
+РўР°Р±Р»РёС†Р° employees
 
-1) Создать таблицу employees
+1) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ employees
 - id. serial,  primary key,
 - employee_name. Varchar(50), not null
  
@@ -12,7 +12,7 @@ create table employees(
 	employee_name varchar(50) not null
 );
 
-2) Наполнить таблицу employee 70 строками.
+2) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ employee 70 СЃС‚СЂРѕРєР°РјРё.
 
 insert into employees (employee_name)
 values  ('James Garcia'),
@@ -86,9 +86,9 @@ values  ('James Garcia'),
 		('Mary Nelson'),
 		('Helen Fisher');
 
-Таблица salary
+РўР°Р±Р»РёС†Р° salary
 
-3) Создать таблицу salary
+3) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ salary
 - id. Serial  primary key,
 - monthly_salary. Int, not null
 
@@ -97,7 +97,7 @@ create table salary1 (
 	monthly_salary int not null
 );
 
-4) Наполнить таблицу salary 15 строками:
+4) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ salary 15 СЃС‚СЂРѕРєР°РјРё:
 - 1000
 - 1100
 - 1200
@@ -133,7 +133,7 @@ values  (1000),
 		(2400),
 		(2500);
 
-5) Создать таблицу employee_salary
+5) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ employee_salary
 - id. Serial  primary key,
 - employee_id. Int, not null, unique
 - salary_id. Int, not null
@@ -144,8 +144,8 @@ create table employee_salary(
 	salary_id int not null
 );
 
-6) Наполнить таблицу employee_salary 40 строками:
-- в 10 строк из 40 вставить несуществующие employee_id
+6) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ employee_salary 40 СЃС‚СЂРѕРєР°РјРё:
+- РІ 10 СЃС‚СЂРѕРє РёР· 40 РІСЃС‚Р°РІРёС‚СЊ РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРµ employee_id
 
 drop table employee_salary;
 
@@ -191,9 +191,9 @@ values  (11, 11),
 	    (89, 12),
 	    (90, 11);
 	   
-Таблица roles
+РўР°Р±Р»РёС†Р° roles
 	   
-7) Создать таблицу roles
+7) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ roles
 - id. Serial  primary key,
 - role_name. int, not null, unique
 
@@ -202,12 +202,12 @@ create table roles1(
 	role_name int not null unique
 );
 
-8) Поменять тип столба role_name с int на varchar(30)
+8) РџРѕРјРµРЅСЏС‚СЊ С‚РёРї СЃС‚РѕР»Р±Р° role_name СЃ int РЅР° varchar(30)
 
 alter table roles1
 alter column role_name type varchar(40) using role_name::varchar(30);
 
-9) Наполнить таблицу roles 20 строками:
+9) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ roles 20 СЃС‚СЂРѕРєР°РјРё:
 
 insert into roles1(id, role_name)
 values  (1, 'Junior Python developer'),
@@ -231,12 +231,12 @@ values  (1, 'Junior Python developer'),
         (19, 'Middle Automation QA engineer'),
         (20, 'Senior Automation QA engineer');
        
-Таблица roles_employee
+РўР°Р±Р»РёС†Р° roles_employee
 
-10) Создать таблицу roles_employee
+10) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ roles_employee
 - id. Serial  primary key,
-- employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
-- role_id. Int, not null (внешний ключ для таблицы roles, поле id)
+- employee_id. Int, not null, unique (РІРЅРµС€РЅРёР№ РєР»СЋС‡ РґР»СЏ С‚Р°Р±Р»РёС†С‹ employees, РїРѕР»Рµ id)
+- role_id. Int, not null (РІРЅРµС€РЅРёР№ РєР»СЋС‡ РґР»СЏ С‚Р°Р±Р»РёС†С‹ roles, РїРѕР»Рµ id)
 
  create table roles_employee(
  	id serial primary key,
@@ -248,7 +248,7 @@ values  (1, 'Junior Python developer'),
  		references roles1(id)
  );
 
-11) Наполнить таблицу roles_employee 40 строками:
+11) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ roles_employee 40 СЃС‚СЂРѕРєР°РјРё:
 
 insert into roles_employee(employee_id, role_id)
 values  (1, 20),
